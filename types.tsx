@@ -11,6 +11,6 @@ import {
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
-  Home: undefined;
+  Home: { index: number };
   Favorite: undefined;
 };

@@ -7,17 +7,19 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { fetchMarsData } from "../redux/marsSlice";
 
 export default function FavoriteScreen() {
-  const { items, pending } = useAppSelector((state) => state.mars);
-  const dispatch = useDispatch();
+  const { favorites, pending } = useAppSelector((state) => state.mars);
 
-  useEffect(() => {
-    dispatch(fetchMarsData());
-  }, []);
-
-  if (!pending) {
+  if (favorites.length == 0) {
     return (
       <Block center middle>
-        <ActivityIndicator color="red" />
+        <Image
+          source={require("../assets/images/empty.png")}
+          resizeMode="contain"
+          style={{
+            width: 330,
+            height: 250,
+          }}
+        />
       </Block>
     );
   }
@@ -25,7 +27,7 @@ export default function FavoriteScreen() {
   return (
     <Block>
       <MasonryList
-        data={items}
+        data={favorites}
         isLoading={false}
         ListEmptyComponent={() => <Block></Block>}
         contentContainerStyle={{ marginLeft: 10 }}

@@ -54,16 +54,6 @@ function RootNavigator() {
               />
             </Pressable>
           ),
-          headerLeft: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Undo")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <Text color="red">Undo</Text>
-            </Pressable>
-          ),
         })}
       />
 
