@@ -162,7 +162,7 @@ const TinderCard = ({
           }}
         >
           <Block row space="around">
-            <TouchableOpacity onPress={() => onLike(index)}>
+            <TouchableOpacity onPress={() => onDLike(index)}>
               <Animated.View
                 style={[styles.like, { backgroundColor: "black" }, dlikeStyle]}
               >
@@ -170,7 +170,7 @@ const TinderCard = ({
               </Animated.View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => onDLike(index)}>
+            <TouchableOpacity onPress={() => onLike(index)}>
               <Animated.View
                 style={[styles.like, { backgroundColor: "red" }, likeStyle]}
               >
